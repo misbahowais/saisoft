@@ -1,0 +1,42 @@
+<p>employee updTE</p>
+<form [formGroup]="form" (ngSubmit)="update()">
+    <div class="row">
+        <div class="col-3">
+            <label class="label">Name</label>
+            <input [(ngModel)]="employee.name" type="text" class="form-control" formControlName="name" />
+            <span *ngIf="(name?.dirty || name?.touched) && name?.errors?.['required']">This field is required</span>
+        </div>
+        <div class="col-3">
+            <label class="label">Email</label>
+            <input [(ngModel)]="employee.email" type="text" class="form-control" formControlName="email" />
+            <span *ngIf="(name?.dirty || name?.touched) && name?.errors?.['required']">This field is required</span>
+
+
+        </div>
+        <div class="col-3">
+            <label class="label">Date of birth</label>
+            <input type="datetime" [(ngModel)]="employee.dob" class="form-control" formControlName="dob" />
+
+        </div>
+        <div class="col-3">
+            <label class="label">Designation</label>
+            <input type="text" [(ngModel)]="employee.designation" class="form-control" formControlName="designation" />
+
+        </div>
+        <div class="col-3">
+            <label class="label">Salary</label>
+            <input type="number" [(ngModel)]="employee.salary" class="form-control" formControlName="salary" />
+
+        </div>
+        <div class="col-3">
+            <label class="label">Status</label>
+            <input type="checkbox" [checked]="employee.status"  [(ngModel)]="employee.status" class="form-control"
+                formControlName="status" />
+
+        </div>
+        <div class="col-3">
+            <button type="submit">Create</button>
+
+        </div>
+    </div>
+</form>
